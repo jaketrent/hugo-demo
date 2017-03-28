@@ -36,7 +36,7 @@ if (account != null)
 It's very easy to forget that null check, or to convince yourself that, in this particular scenario, it could never
 happen. `Maybe` makes it impossible to ignore the "no value" case by wrapping the value. Let's look at how `Maybe` (also known as `option`) works in F#.
 
-```fsharp
+```
 let findAccount (id:string) : Account option = 
   if /* we have an account */
     then Some account

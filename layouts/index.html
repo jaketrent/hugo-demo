@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>{{ .Site.Title }}</title>
+    <link href="{{ .Site.BaseURL }}/css/style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <h1>Eng Blog</h1>
+    {{ range .Data.Pages }}
+      <a href="{{ .URL }}">{{ .Title }}</a>
+    {{ end }}
+  </body>
+</html>

@@ -1,7 +1,3 @@
-# How to start your Hugo Blog 
-
-[More about hugo](https://gohugo.io/)
-
 ## Install
 
 ```
@@ -11,7 +7,7 @@ brew update && brew install hugo
 ## Create a New Site
 
 ```
-hugo new site engblog
+cd ~/dev && hugo new site engblog
 ```
 
 ## Make it a Git Repo
@@ -20,19 +16,32 @@ hugo new site engblog
 git init
 ```
 
-## Edit Site Title
+## Edit Site Config 
 
 ```
 cd engblog && vim config.toml
 ```
 
+To be whatever you'd like:
+
+```
+title = "Eng Blog"
+baseurl = "https://psengblog.herokuapp.com"
+```
+
 ## Create a New Post
+
+Generate a file:
 
 ```
 hugo new post/removing-null-from-csharp.md
 ```
 
+Edit the file, and follow your heart.
+
 ## Edit the Frontmatter
+
+The frontmatter lives at the top of your post.md file.  It is post metadata:
 
 ```
 title = "Title Case Me"
@@ -41,25 +50,13 @@ draft = false
 
 ## Create a Layout
 
+Put it in the layouts dir:
+
 ```
 vim layouts/index.html
 ```
 
-## Create a Stylesheet
-
-```
-<link href="{{ .Site.BaseURL}}/css/style.css" rel="stylesheet" />
-```
-
-```
-vim static/css/style.css
-```
-
-```
-body {
- background: yellow;
-}
-```
+Loop through the pages you've created:
 
 ```
 {{ range .Data.Pages }}
@@ -67,11 +64,38 @@ body {
 {{ end }}
 ```
 
+## Create a Stylesheet
+
+Put it in the static dir:
+
+```
+vim static/css/style.css
+```
+
+Make something basic:
+
+```
+body {
+  background: #ddd;
+  font-family: sans-serif;
+}
+```
+
+Link in the head:
+
+```
+<link href="{{ .Site.BaseURL}}/css/style.css" rel="stylesheet" />
+```
+
 ## Create a Post Page
+
+The _default section will be used to render posts:
 
 ```
 vim layouts/_default/single.html
 ```
+
+The template has the context of a page object:
 
 ```
 <h1>{{ .Title }}</h1>
@@ -85,8 +109,8 @@ vim layouts/_default/single.html
 In head:
 
 ```
-<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css" type="text/css" media="all" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css" type="text/css" media="all" />
 ```
 
 Before body close:

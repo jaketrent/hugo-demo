@@ -2,6 +2,7 @@
 date = "2017-03-27T17:17:05-06:00"
 title = "Removing Null from C#"
 draft = false
+author = "Eric Andres"
 +++
 
 Null references can be a source of subtle bugs in software. `Maybe` is a tool that, while deceptively similar, provides

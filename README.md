@@ -29,6 +29,12 @@ title = "Eng Blog"
 baseurl = "https://psengblog.herokuapp.com"
 ```
 
+## Start Dev Server
+
+```
+hugo server && open localhost:1313
+```
+
 ## Create a New Post
 
 Generate a file:

@@ -2,6 +2,9 @@
   <head>
     <title>{{ .Site.Title }}</title>
     <link href="{{ .Site.BaseURL }}/css/style.css" rel="stylesheet"/>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css" type="text/css" media="all" />
   </head>
   <body>
     <div class="container">
@@ -10,5 +13,6 @@
         {{ .Content }}
       </p>
     </div>
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>

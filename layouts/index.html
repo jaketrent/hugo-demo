@@ -4,9 +4,14 @@
     <link href="{{ .Site.BaseURL }}/css/style.css" rel="stylesheet"/>
   </head>
   <body>
-    <h1>Eng Blog</h1>
-    {{ range .Data.Pages }}
-      <a href="{{ .URL }}">{{ .Title }}</a>
-    {{ end }}
+    <div class="container">
+      <h1>Eng Blog</h1>
+      {{ range .Data.Pages }}
+        <a href="{{ .URL }}">{{ .Title }}</a>
+        <p>
+          {{ .Summary }}
+        </p>
+      {{ end }}
+    </div>
   </body>
 </html>

@@ -7,6 +7,8 @@ draft = false
 Null references can be a source of subtle bugs in software. `Maybe` is a tool that, while deceptively similar, provides
 much greater safety. Let's look at an example of retrieving a document from a database. First, with code that uses null.
 
+<!--more-->
+
 ```csharp
 public class AccountRepository
 {
